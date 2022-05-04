@@ -28,5 +28,6 @@
             "mezzoTrasporto": 4,
             "costo": 50
         }
-    ]
+    ],
+    "reservations" : []
 }
