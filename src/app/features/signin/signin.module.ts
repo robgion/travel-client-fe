@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SigninContainerComponent } from './signin-container/signin-container.component';
+import { SignupRoutingModule } from './signin-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { SigninContainerComponent } from './signin-container/signin-container.co
     SigninContainerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SignupRoutingModule
   ]
 })
 export class SigninModule { }

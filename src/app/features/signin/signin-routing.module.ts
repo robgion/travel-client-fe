@@ -1,11 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { SignupContainerComponent } from "./components/signup-container/signup-container.component";
+import { SigninContainerComponent } from "./signin-container/signin-container.component";
 
 const routes: Routes = [
     {
-        path: '', component: SignupContainerComponent
+        path: '', component: SigninContainerComponent
     }
 ]
 

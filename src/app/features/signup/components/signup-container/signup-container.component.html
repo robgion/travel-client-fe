@@ -8,7 +8,10 @@
     <label>
       Password
     </label>
-    <input type='text' name="campoPassword" #refPassword="ngModel" [ngModel]="currentPassword" required>
+    <input type='password' name="campoPassword" #refPassword="ngModel" [ngModel]="currentPassword" required>
     <small class="error-msg" *ngIf="refPassword.touched && refPassword.invalid">La password e' obbligatoria</small>
   </div>
+  <input type="submit" value="Registrati"
+  [disabled]="refPassword.invalid && refEmail.invalid">
 </form>
+
