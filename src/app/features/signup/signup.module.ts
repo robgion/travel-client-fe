@@ -14,7 +14,7 @@ import { SignupContainerComponent } from './components/signup-container/signup-c
     CommonModule,
     FormsModule
   ],
-  exports: [
+  exports:[
     SignupContainerComponent
   ]
 })
