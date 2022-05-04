@@ -8,8 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupContainerComponent implements OnInit {
 
-  currentEmail:String='';
-  currentPassword:String='';
+  currentEmail:string='';
+  currentPassword:string='';
   constructor() {
    }
   
