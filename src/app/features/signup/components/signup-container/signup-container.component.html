@@ -1,20 +1,14 @@
-<ng-template #NgDrivenForm> 
-    <form #signupForm="ngForm" (submit)="completeSignupForm(signupForm)">
-        <div>
-            <label>
-                Email
-            </label>
-            <input type='text' name="campoEmail" 
-            #refEmail="ngModel" [ngModel]="currentEmail"
-            required> 
-            <small class="error-msg" *ngIf="refEmail.touched && refEmail.invalid">L'email e' obbligatoria</small>
-            <label>
-                Password
-            </label>
-            <input type='text' name="campoPassword" 
-            #refPassword="ngModel" [ngModel]="currentPassword"
-            required> 
-            <small class="error-msg" *ngIf="refPassword.touched && refPassword.invalid">La password e' obbligatoria</small>    
-        </div>
-    </form>
-</ng-template>
+<form #signupForm="ngForm" (submit)="completeSignupForm(signupForm)">
+  <div>
+    <label>
+      Email
+    </label>
+    <input type='text' name="campoEmail" #refEmail="ngModel" [ngModel]="currentEmail" required>
+    <small class="error-msg" *ngIf="refEmail.touched && refEmail.invalid">L'email e' obbligatoria</small>
+    <label>
+      Password
+    </label>
+    <input type='text' name="campoPassword" #refPassword="ngModel" [ngModel]="currentPassword" required>
+    <small class="error-msg" *ngIf="refPassword.touched && refPassword.invalid">La password e' obbligatoria</small>
+  </div>
+</form>
