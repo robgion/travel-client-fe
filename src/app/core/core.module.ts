@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from './services/user.service'
-import { CheckUserService } from './services/checkuser.service'
 import { PacketService } from './services/packet.service'
 
 @NgModule({
@@ -9,6 +8,6 @@ import { PacketService } from './services/packet.service'
   imports: [
     CommonModule
   ], 
-  providers: [ UserService, PacketService, CheckUserService ]
+  providers: [ UserService, PacketService ]
 })
 export class CoreModule { }

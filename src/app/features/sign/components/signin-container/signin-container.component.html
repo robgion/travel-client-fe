@@ -3,7 +3,7 @@
         <label>
           Email
         </label><br>
-        <input type='text' name="campoEmail" #refEmail="ngModel" [ngModel]="insertedEmail" required><br>
+        <input type='mail' name="campoEmail" #refEmail="ngModel" [ngModel]="insertedEmail" required><br>
         <small class="error-msg" *ngIf="refEmail.touched && refEmail.invalid">L'email e' obbligatoria</small>
       </div>
       <div class="centered">
