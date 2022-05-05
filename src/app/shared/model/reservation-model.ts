@@ -1,7 +1,8 @@
 export interface Reservation {
     id: number,
-    nome: string,
-    password: string,
-    mail: string,
-    isAdmin: boolean
+    id_user: number,
+    id_packet: number,
+    start_date: string,
+    end_date: string,
+    nr_people: number
 }

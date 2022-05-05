@@ -32,8 +32,8 @@ export class SigninContainerComponent implements OnInit {
         for (let index = 0; index < result.length; index++) {
           const user: User = result[index];
           if (user.mail === this.insertedEmail && user.password === this.insertedPassword) {
-            if (user.role == RoleEnum.GUEST) this.router.navigateByUrl('home')
-            if (user.role == RoleEnum.ADMIN) this.router.navigateByUrl('home-admin')
+            if (user.role == RoleEnum.GUEST) this.router.navigateByUrl('homeuser')
+            if (user.role == RoleEnum.ADMIN) this.router.navigateByUrl('homeadmin')
           } else {
             this.incorrectForm = true
           }
@@ -43,7 +43,10 @@ export class SigninContainerComponent implements OnInit {
         console.log(error)
       }
     )
+  }
 
+  goToSignUp() {
+    this.router.navigateByUrl("login/signup")
   }
 
   ngOnInit(): void {
