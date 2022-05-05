@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CheckUserService } from 'src/app/core/services/checkuser.service';
+import { RoleEnum } from 'src/app/shared/enum/role-enum';
+import { User } from 'src/app/shared/model/user-model';
+
 
 @Component({
   selector: 'fin-signin-container',
@@ -6,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin-container.component.css']
 })
 export class SigninContainerComponent implements OnInit {
+  
+  insertedEmail: string=''
+  insertedPassword:string=''
+  incorrectForm: boolean = false
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private checkUserService: CheckUserService
+  ) {
 
+   }
+
+  completeSigninForm(signinForm: NgForm) {
+    this.insertedEmail = signinForm.value.campoEmail
+    this.insertedPassword = signinForm.value.campoPassword
+    this.checkUserService.getAllUser().subscribe(
+      result => {
+        for (let index = 0; index < result.length; index++) {
+        const user: User = result[index];
+          if (user.mail === this.insertedEmail && user.password === this.insertedPassword) {
+            if (user.role == RoleEnum.GUEST ) this.router.navigateByUrl('home')
+            if (user.role == RoleEnum.ADMIN ) this.router.navigateByUrl('home-admin')
+          } else {
+            this.incorrectForm = true
+          }        
+        } 
+        
+        
+        
+      },
+
+      error => {
+        console.log(error)
+      }
+    )
+
+  }
+  
   ngOnInit(): void {
   }
 

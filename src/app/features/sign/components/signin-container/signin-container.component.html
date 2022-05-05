@@ -1,1 +1,19 @@
-<p>Pagina di Login!!</p>
+<form class="card" #signinForm="ngForm" (submit)="completeSigninForm(signinForm)">
+    <div class="centered">
+        <label>
+          Email
+        </label><br>
+        <input type='text' name="campoEmail" #refEmail="ngModel" [ngModel]="insertedEmail" required><br>
+        <small class="error-msg" *ngIf="refEmail.touched && refEmail.invalid">L'email e' obbligatoria</small>
+      </div>
+      <div class="centered">
+        <label>
+          Password
+        </label><br>
+        <input type='password' name="campoPassword" #refPassword="ngModel" [ngModel]="insertedPassword" required><br>
+        <small class="error-msg" *ngIf="refPassword.touched && refPassword.invalid">La password e' obbligatoria</small>
+      </div>
+      <input class="centered" type="submit" value="Accedi"
+      [disabled]="(refPassword.invalid && refEmail.invalid)"><br>
+      <small class="error-msg" *ngIf="this.incorrectForm">Email o Password errate</small>
+</form>
