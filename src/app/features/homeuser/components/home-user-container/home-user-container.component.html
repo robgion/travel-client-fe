@@ -1,0 +1,16 @@
+<div>
+    <h1>Questa è la pagina utente di id: {{currentUserId}}</h1>
+    <fin-list-packets 
+        [option]="'Seleziona'"
+        [title]="'Pacchetti disponibili'"
+        [listPackets] = "availablePacketsList"
+        (selectEvent)="selectHandler($event)"
+    ></fin-list-packets>
+
+    <fin-list-packets 
+        [option]="'Elimina'"
+        [title]="'Pacchetti prenotati'"
+        [listPackets] = "reservedPacketsList"
+        (deleteEvent)="deleteHandler($event)"
+    ></fin-list-packets>
+</div>
