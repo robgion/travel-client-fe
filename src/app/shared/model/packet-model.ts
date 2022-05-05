@@ -1,4 +1,4 @@
-import { VehicleEnum } from "../../@template/enum/vehicle-enum"
+import { VehicleEnum } from "../enum/vehicle-enum"
 
 export interface Packet {
     id: number,
