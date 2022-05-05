@@ -2,13 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeadminContainerComponent } from './homeadmin-container/homeadmin-container.component';
 import { NavbarModule } from 'src/app/@template/navbar/navbar.module';
-import { Routes } from '@angular/router';
+import { HomeAdminRoutingModule } from './homeadmin-routing.module';
 
-const routes: Routes = [
-  {
-      path: '', component: HomeadminContainerComponent
-  }
-]
+
 
 @NgModule({
   declarations: [
@@ -16,7 +12,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    NavbarModule
+    NavbarModule,
+    HomeAdminRoutingModule
   ]
 })
 export class HomeadminModule { }

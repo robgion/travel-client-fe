@@ -18,7 +18,6 @@ import { HomeadminModule } from './features/homeadmin/homeadmin.module';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    HomeadminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
