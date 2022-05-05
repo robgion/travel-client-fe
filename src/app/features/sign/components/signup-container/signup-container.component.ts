@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
+import { RoleEnum } from 'src/app/shared/enum/role-enum';
+import { User } from 'src/app/shared/model/user-model';
 
 @Component({
   selector: 'fin-signup-container',
@@ -35,7 +37,24 @@ export class SignupContainerComponent implements OnInit {
             return
           }        
         }
-        if (!this.alreadyExist) this.router.navigateByUrl('login/signin')
+        if (!this.alreadyExist) {
+          const userToSave:User={
+            id:result.length+1,
+            mail:signupForm.value.campoEmail,
+            password:signupForm.value.campoPassword,
+            role:RoleEnum.GUEST
+          }
+          this.userService.addUser(userToSave).subscribe(
+            result => {
+              console.log(result)
+              console.log("UTENTE REGISTRATO!")
+            },
+            error =>  {
+              console.log(error)
+            }
+          )
+          this.router.navigateByUrl('login/signin')
+        }
       },
       error => {
         console.log(error)
