@@ -39,7 +39,7 @@ export class SignupContainerComponent implements OnInit {
         }
         if (!this.alreadyExist) {
           const userToSave:User={
-            id:result.length+1,
+            id:0,
             mail:signupForm.value.campoEmail,
             password:signupForm.value.campoPassword,
             role:RoleEnum.GUEST

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Reservation } from 'src/app/shared/model/reservation-model';
 import { environment } from 'src/environments/environment';
 
@@ -12,8 +13,18 @@ export class ReservationService {
     private http: HttpClient
   ) { }
 
-  public getAllReservationsByUserId(user_id: number) {
+  public getAllReservationsByUserId(user_id: number):Observable<Reservation[]> {
     const url = environment.baseUrl + '/reservations?id_user=' + user_id
     return this.http.get<Reservation[]>(url);
+  }
+
+  public deleteReservationById(rsId: number): Observable<any> {
+    const url = environment.baseUrl + '/reservations/' +rsId;
+    return this.http.delete<any>(url);
+  }
+
+  public createReservation(reservation:Reservation):Observable<any>{
+    const url = environment.baseUrl + '/reservations/'
+    return this.http.post(url,reservation)
   }
 }

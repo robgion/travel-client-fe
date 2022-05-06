@@ -1,6 +1,5 @@
 {
-  "users": [
-    {
+  "users": [{
       "id": 1,
       "mail": "ciao@gmail.com",
       "password": "1234",
@@ -19,8 +18,7 @@
       "role": 1
     }
   ],
-  "packets": [
-    {
+  "packets": [{
       "id": 1,
       "nomePacchetto": "Vacanza per poveri",
       "city": "Vimercate",
@@ -42,8 +40,7 @@
       "costo": 20
     }
   ],
-  "reservations": [
-    {
+  "reservations": [{
       "id": 1,
       "id_user": 1,
       "id_packet": 1,
@@ -68,12 +65,20 @@
       "nr_people": 2
     },
     {
-      "id": 4,
+      "id":4,
       "id_user": 2,
       "id_packet": 1,
       "start_date": "19/06/2022",
       "end_date": "1/07/2022",
       "nr_people": 4
+    },
+    {
+      "id": 5,
+      "id_user": 1,
+      "id_packet": 1,
+      "start_date": "15/05/2022",
+      "end_date": "27/05/2022",
+      "nr_people": 8
     },
     {
       "id": 6,
@@ -82,14 +87,6 @@
       "start_date": "23/07/2022",
       "end_date": "08/08/2022",
       "nr_people": 3
-    },
-    {
-      "id": 7,
-      "id_user": "1",
-      "id_packet": 1,
-      "start_date": "25-05-2022",
-      "end_date": "30-05-2022",
-      "nr_people": 2
     }
   ]
 }

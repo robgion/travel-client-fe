@@ -1,0 +1,26 @@
+<div>
+    
+    <h2>Riepilogo per </h2>
+   
+   
+   
+    <form #reservationForm="ngForm" (submit)="createReservation(reservationForm)">
+        <label>Data partenza:</label>
+        <input placeholder="dd-mm-yyyy" type="date" name="dataInizio" #refDataInizio="ngModel"
+        [ngModel]="startDate">
+
+        <label>Data ritorno:</label>
+        <input placeholder="dd-mm-yyyy" type="date" name="dataFine" #refDataFine="ngModel"
+        [ngModel]="endDate">
+        
+        <label>Numero viaggiatori:</label>
+        <input placeholder=1 min="1" max="10"
+         type="number" name="numeroPersone" #refNumeroPersone="ngModel" 
+         [ngModel]="nPeople">
+
+
+        <input type="submit" value="Prenota!">
+    </form>
+
+
+</div>
