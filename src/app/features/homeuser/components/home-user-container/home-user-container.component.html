@@ -1,20 +1,28 @@
+<fin-navbar-container
+    [listTabs]="['Pacchetti disponibili','Lista prenotazioni']"
+    (menuSelectionEvent)="switchUserView($event)"
+></fin-navbar-container>
+
 <div>
     <h1>Questa è la pagina utente di id: {{currentUserId}}</h1>
-    <fin-list-items 
-        [listOptions]= "['Seleziona']"
-        [title]="'Pacchetti disponibili'"
-        [listItems] = "availablePacketsList"
-        [listHeader] = "availablePacketsListHeaders"
-        [listKeys] = " availablePacketsKeys"
-        (selectEvent)="selectHandler($event)"
-    ></fin-list-items>
-
-    <fin-list-items
-        [listOptions]= "['Elimina']"
-        [title]="'Prenotazioni effettuate'"
-        [listItems] = "reservationsList"
-        [listHeader] = "reservationsListHeaders"
-        [listKeys] = "reservationsKeys"
-        (deleteEvent)="deleteHandler($event)"
-    ></fin-list-items>
+    <div *ngIf="showAvailablePackets">
+        <fin-list-items 
+            [listOptions]= "['Seleziona']"
+            [title]="'Pacchetti disponibili'"
+            [listItems] = "availablePacketsList"
+            [listHeader] = "availablePacketsListHeaders"
+            [listKeys] = " availablePacketsKeys"
+            (selectEvent)="selectHandler($event)"
+        ></fin-list-items>
+    </div>
+    <div *ngIf="showReservations">
+        <fin-list-items
+            [listOptions]= "['Elimina']"
+            [title]="'Prenotazioni effettuate'"
+            [listItems] = "reservationsList"
+            [listHeader] = "reservationsListHeaders"
+            [listKeys] = "reservationsKeys"
+            (deleteEvent)="deleteHandler($event)"
+        ></fin-list-items>
+    </div>
 </div>

@@ -30,6 +30,11 @@ export class HomeUserContainerComponent implements OnInit {
   reservationsList: Reservation[] = []
   currentUserId: number = 0
 
+  //Booleans to switch view
+  showAvailablePackets = true
+  showReservations = false
+
+
   constructor(
     private packetService: PacketService,
     private reservationService: ReservationService,
@@ -56,6 +61,16 @@ export class HomeUserContainerComponent implements OnInit {
         this.loadReservedPackets()
       }
     )
+  }
+
+  switchUserView(indice_menu: number) {
+    if (indice_menu == 0) {
+      this.showAvailablePackets = true
+      this.showReservations = false
+    } else {
+      this.showReservations = true
+      this.showAvailablePackets = false
+    }
   }
 
   private loadReservedPackets() {

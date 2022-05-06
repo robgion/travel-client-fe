@@ -1,18 +1,35 @@
 .toolbar {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-  
-  .fin-menu {
-    margin-right: 30px;
-    cursor: pointer;
-  }
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
 
+.fin-menu {
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+span {
+  height: 100;
+  padding-left: 1%;
+  cursor: pointer;
+}
+
+span:hover {
+  height: 100%;
+  text-align: center;
+  background-color: #00008b;
+  color: white;
+}
+
+.logout-button {
+  position: absolute;
+  right: 1%;
+}

@@ -5,6 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeUserRoutingModule } from './components/homeuser-routing.module';
 import { PacketDetailComponent } from './components/packet-detail/packet-detail.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarModule } from 'src/app/@template/navbar/navbar.module';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     HomeUserRoutingModule,
-    FormsModule
+    FormsModule,
+    NavbarModule
   ]
 })
 export class HomeuserModule { }

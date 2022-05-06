@@ -1,6 +1,3 @@
-<fin-navbar-container (menuSelection)="menuSelectionHandler($event)"></fin-navbar-container>
-
-
 <ng-template [ngIf]="showCreazionePacchetto">
   <h1 class="admin-title">Creazione Nuovo Pacchetto</h1>
   <form class="card" #packetForm="ngForm" (submit)="packetCreation(packetForm)">
