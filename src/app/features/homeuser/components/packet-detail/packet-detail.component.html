@@ -6,11 +6,11 @@
    
     <form #reservationForm="ngForm" (submit)="createReservation(reservationForm)">
         <label>Data partenza:</label>
-        <input placeholder="dd-mm-yyyy" type="date" name="dataInizio" #refDataInizio="ngModel"
+        <input type="date" name="dataInizio" #refDataInizio="ngModel"
         [ngModel]="startDate">
 
         <label>Data ritorno:</label>
-        <input placeholder="dd-mm-yyyy" type="date" name="dataFine" #refDataFine="ngModel"
+        <input type="date" name="dataFine" #refDataFine="ngModel"
         [ngModel]="endDate">
         
         <label>Numero viaggiatori:</label>
@@ -20,6 +20,7 @@
 
 
         <input type="submit" value="Prenota!">
+        <small *ngIf="invalidDates">Inserisci delle date valide! Pls</small>
     </form>
 
 

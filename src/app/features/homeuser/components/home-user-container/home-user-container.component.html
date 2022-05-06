@@ -1,16 +1,20 @@
 <div>
     <h1>Questa è la pagina utente di id: {{currentUserId}}</h1>
-    <fin-list-packets 
-        [option]="'Seleziona'"
+    <fin-list-items 
+        [listOptions]= "['Seleziona']"
         [title]="'Pacchetti disponibili'"
-        [listPackets] = "availablePacketsList"
+        [listItems] = "availablePacketsList"
+        [listHeader] = "availablePacketsListHeaders"
+        [listKeys] = " availablePacketsKeys"
         (selectEvent)="selectHandler($event)"
-    ></fin-list-packets>
+    ></fin-list-items>
 
-    <fin-list-packets 
-        [option]="'Elimina'"
-        [title]="'Pacchetti prenotati'"
-        [listPackets] = "reservedPacketsList"
+    <fin-list-items
+        [listOptions]= "['Elimina']"
+        [title]="'Prenotazioni effettuate'"
+        [listItems] = "reservationsList"
+        [listHeader] = "reservationsListHeaders"
+        [listKeys] = "reservationsKeys"
         (deleteEvent)="deleteHandler($event)"
-    ></fin-list-packets>
+    ></fin-list-items>
 </div>

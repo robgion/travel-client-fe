@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PacketService } from 'src/app/core/services/packet.service';
 import { ReservationService } from 'src/app/core/services/reservation.service';
 import { Packet } from 'src/app/shared/model/packet-model';
@@ -14,13 +14,18 @@ import { Reservation } from 'src/app/shared/model/reservation-model';
 })
 export class PacketDetailComponent implements OnInit {
 
-  startDate:string=""
-  endDate: string=""
-  nPeople:number=1
-  constructor(private route: ActivatedRoute, private packetService:PacketService, 
-    private reservationService:ReservationService ) {
+  startDate: string = ""
+  endDate: string = ""
+  nPeople: number = 1
 
-   }
+  invalidDates: boolean = false
+
+  constructor(private route: ActivatedRoute,
+    private packetService: PacketService,
+    private reservationService: ReservationService,
+    private router: Router) {
+
+  }
   currentPacket: Packet = {} as Packet
   currentUserId: number = 0;
 
@@ -31,11 +36,11 @@ export class PacketDetailComponent implements OnInit {
         this.currentPacket.id = p['packet_id']
         this.currentUserId = p['user_id']
         this.packetService.getPacketById(this.currentPacket.id).subscribe(
-          result=>{
-              this.currentPacket=result
+          result => {
+            this.currentPacket = result
           },
-          error=>{
-           console.log(error)
+          error => {
+            console.log(error)
           }
         )
 
@@ -54,23 +59,28 @@ export class PacketDetailComponent implements OnInit {
   }
 
   createReservation(reservationForm: NgForm) {
-    console.log(this.formatDateString(reservationForm.value.dataInizio))
-    console.log(this.formatDateString(reservationForm.value.dataFine))
-    console.log(reservationForm.value.numeroPersone)
+    if (reservationForm.value.dataInizio === "" || reservationForm.value.dataFine === "") {
+      console.log("NO!")
+      this.invalidDates = true
+      return
+    }
 
-    const newReservation:Reservation={
-      id:0,
-      id_user:this.currentUserId,
-      id_packet:this.currentPacket.id,
-      start_date:this.formatDateString(reservationForm.value.dataInizio),
-      end_date:this.formatDateString(reservationForm.value.dataFine),
-      nr_people:reservationForm.value.numeroPersone
+
+
+    const newReservation: Reservation = {
+      id: 0,
+      id_user: this.currentUserId,
+      id_packet: this.currentPacket.id,
+      start_date: this.formatDateString(reservationForm.value.dataInizio),
+      end_date: this.formatDateString(reservationForm.value.dataFine),
+      nr_people: reservationForm.value.numeroPersone
     }
     this.reservationService.createReservation(newReservation).subscribe(
-      result=>{
+      result => {
         console.log(result)
+        this.router.navigateByUrl("homeuser/" + this.currentUserId)
       },
-      error=>{
+      error => {
         console.log(error)
       }
     )

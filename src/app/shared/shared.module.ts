@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { ButtonComponent } from './components/button/button.component';
-import { ListPacketsComponent } from './components/list-packets/list-packets.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
 
 
 
@@ -10,7 +10,7 @@ import { ListPacketsComponent } from './components/list-packets/list-packets.com
   declarations: [
     TextInputComponent,
     ButtonComponent,
-    ListPacketsComponent
+    ListItemsComponent
   ], 
   imports: [
     CommonModule
@@ -18,7 +18,7 @@ import { ListPacketsComponent } from './components/list-packets/list-packets.com
   exports:[
     TextInputComponent,
     ButtonComponent,
-    ListPacketsComponent
+    ListItemsComponent
   ]
 })
 export class SharedModule { }

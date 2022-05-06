@@ -44,22 +44,6 @@
   ],
   "reservations": [
     {
-      "id": 1,
-      "id_user": 1,
-      "id_packet": 1,
-      "start_date": "blabla",
-      "end_date": "blabla_end",
-      "nr_people": 5
-    },
-    {
-      "id": 2,
-      "id_user": 1,
-      "id_packet": 2,
-      "start_date": "blabla2",
-      "end_date": "blabla_end2",
-      "nr_people": 15
-    },
-    {
       "id": 3,
       "id_user": 1,
       "id_packet": 2,
@@ -76,6 +60,14 @@
       "nr_people": 4
     },
     {
+      "id": 5,
+      "id_user": 1,
+      "id_packet": 1,
+      "start_date": "15/05/2022",
+      "end_date": "27/05/2022",
+      "nr_people": 8
+    },
+    {
       "id": 6,
       "id_user": 1,
       "id_packet": 2,
@@ -84,12 +76,12 @@
       "nr_people": 3
     },
     {
-      "id": 7,
+      "id": 9,
       "id_user": "1",
       "id_packet": 1,
-      "start_date": "25-05-2022",
-      "end_date": "30-05-2022",
-      "nr_people": 2
+      "start_date": "01-05-2022",
+      "end_date": "03-05-2022",
+      "nr_people": 1
     }
   ]
 }

@@ -13,16 +13,28 @@ import { Reservation } from 'src/app/shared/model/reservation-model';
 })
 export class HomeUserContainerComponent implements OnInit {
 
+  //Campi da consegnare a list-item per la creazione della lista dei pacchetti disponibili
   availablePacketsList: Packet[] = []
+  availablePacketsListHeaders: string[] = 
+    ["ID", "Nome Pacchetto", "Mezzo Trasporto", "Città", "Costo", "Opzioni"]
+  availablePacketsKeys: string[] =
+    ["id", "nomePacchetto", "mezzoTrasporto", "city", "costo"]
+  
+  //Campi da consegnare a list-item per la creazione della lista delle prenotazioni dell'utente
   reservedPacketsList: Packet[] = []
-  reservationsList:Reservation[]=[]
+  reservationsListHeaders: string[] = 
+  ["ID", "ID Utente", "ID Pacchetto", "Data Partenza", "Data Ritorno", "Numero Partecipanti", "Opzioni"]
+  reservationsKeys: string[] =
+  ["id", "id_user", "id_packet", "start_date", "end_date", "nr_people"]
+
+  reservationsList: Reservation[] = []
   currentUserId: number = 0
 
   constructor(
     private packetService: PacketService,
     private reservationService: ReservationService,
     private route: ActivatedRoute,
-    private router:Router
+    private router: Router
   ) {
 
     //Recupero pacchetti disponibili
@@ -34,10 +46,6 @@ export class HomeUserContainerComponent implements OnInit {
         console.log(error)
       }
     )
-
-    //Recupero pacchetti associati all'utente
-
-
   }
 
   ngOnInit(): void {
@@ -58,44 +66,34 @@ export class HomeUserContainerComponent implements OnInit {
         for (let index = 0; index < result.length; index++) {
           const reservation = result[index];
           this.reservationsList.push(reservation)
-          this.packetService.getPacketById(reservation.id_packet).subscribe(
-            result => {
-              this.reservedPacketsList.push(result)
-            },
-            error => {
-              console.log(error)
-            }
-          )
         }
       },
       error => {
         console.log(error)
       }
-    ) 
+    )
   }
 
   selectHandler(packet_id: number) {
     console.log("Hai selezionato il pacchetto: " + packet_id)
-    this.router.navigateByUrl('homeuser/'+this.currentUserId+'/'+packet_id)
+    this.router.navigateByUrl('homeuser/' + this.currentUserId + '/' + packet_id)
   }
 
-  deleteHandler(packet_id: number) {
-    console.log("Hai eliminato il pacchetto: " + packet_id)
+  deleteHandler(reservation_id: number) {
+    console.log("Hai eliminato la prenotazione: " + reservation_id)
     for (let index = 0; index < this.reservationsList.length; index++) {
       const currentReservation = this.reservationsList[index];
-      if(currentReservation.id_packet===packet_id){
+      if (currentReservation.id === reservation_id) {
         this.reservationService.deleteReservationById(currentReservation.id).subscribe(
-          result=>{
-              console.log(result)
-             
-              this.reservedPacketsList=this.reservedPacketsList.filter(el => el.id !==packet_id);
+          result => {
+            this.reservationsList = this.reservationsList.filter(el => el.id !== reservation_id)
           },
-          error=>{
+          error => {
             console.log(error)
           }
         )
       }
-      
+
     }
   }
 
