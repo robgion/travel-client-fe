@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "mail": "ciao@gmail.com",
       "password": "1234",
@@ -18,7 +19,8 @@
       "role": 1
     }
   ],
-  "packets": [{
+  "packets": [
+    {
       "id": 1,
       "nomePacchetto": "Vacanza per poveri",
       "city": "Vimercate",
@@ -38,40 +40,16 @@
       "city": "Grecia",
       "mezzoTrasporto": 2,
       "costo": 20
+    },
+    {
+      "id": 4,
+      "nomePacchetto": "Ciaone",
+      "mezzoTrasporto": 1,
+      "city": "BLALALLALA",
+      "costo": 100
     }
   ],
-  "reservations": [{
-      "id": 1,
-      "id_user": 1,
-      "id_packet": 1,
-      "start_date": "blabla",
-      "end_date": "blabla_end",
-      "nr_people": 5
-    },
-    {
-      "id": 2,
-      "id_user": 1,
-      "id_packet": 2,
-      "start_date": "blabla2",
-      "end_date": "blabla_end2",
-      "nr_people": 15
-    },
-    {
-      "id": 3,
-      "id_user": 1,
-      "id_packet": 2,
-      "start_date": "10/05/2022",
-      "end_date": "17/05/2022",
-      "nr_people": 2
-    },
-    {
-      "id":4,
-      "id_user": 2,
-      "id_packet": 1,
-      "start_date": "19/06/2022",
-      "end_date": "1/07/2022",
-      "nr_people": 4
-    },
+  "reservations": [
     {
       "id": 5,
       "id_user": 1,
@@ -87,6 +65,14 @@
       "start_date": "23/07/2022",
       "end_date": "08/08/2022",
       "nr_people": 3
+    },
+    {
+      "id": 7,
+      "id_user": "1",
+      "id_packet": 3,
+      "start_date": "13-05-2022",
+      "end_date": "22-05-2022",
+      "nr_people": 9999999
     }
   ]
 }

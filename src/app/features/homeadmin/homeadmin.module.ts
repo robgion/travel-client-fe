@@ -7,6 +7,7 @@ import { HomeAdminRoutingModule } from './homeadmin-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ListPrenotazioniContainerComponent } from './components/list-prenotazioni-container/list-prenotazioni-container.component';
 import { ListPacketContainerComponent } from './components/list-packet-container/list-packet-container.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +22,8 @@ import { ListPacketContainerComponent } from './components/list-packet-container
     NavbarModule,
     HomeAdminRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class HomeadminModule { }

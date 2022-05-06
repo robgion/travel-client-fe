@@ -8,7 +8,7 @@ import { ListPrenotazioniContainerComponent } from "./components/list-prenotazio
 
 const routes: Routes = [
     {
-        path: '', component: HomeadminContainerComponent
+        path: '',  redirectTo: 'lista-prenotazioni', pathMatch: 'full'
     },
     {
         path: 'lista-prenotazioni', component: ListPacketContainerComponent

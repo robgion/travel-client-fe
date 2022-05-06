@@ -90,6 +90,10 @@ export class ListPacketContainerComponent implements OnInit {
     )
   }
 
+  goToHomeAdmin() {
+    this.router.navigateByUrl("homeadmin")
+  }
+
   ngOnInit(): void {
   }
 }
