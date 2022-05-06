@@ -15,7 +15,7 @@
         <label>
           Veicolo
         </label><br>
-        <input type='text' name="campoVeicolo" #refVeicolo="ngModel" [ngModel]="insertedVehicle" required><br>
+        <input type='number' placeholder=1 min="1" max="4" name="campoVeicolo" #refVeicolo="ngModel" [ngModel]="insertedVehicle" required><br>
       </div>
       <div class="centered">
         <label>
@@ -27,30 +27,38 @@
         <label>
           Costo
         </label><br>
-        <input type='text' name="campoCosto" #refCosto="ngModel" [ngModel]="insertedCost" required><br>
+        <input type='number' name="campoCosto" #refCosto="ngModel" [ngModel]="insertedCost" required><br>
       </div>
     </div>
-    <input class="centered" type="submit" value="Aggiungi il Pacchetto"
-      [disabled]="(refNome.untouched) || (refVeicolo.untouched) || (refCity.untouched) || (refCosto.untouched)"><br>
-    <small class="error-msg"
-      *ngIf="(refNome.untouched) || (refVeicolo.untouched) || (refCity.untouched) || (refCosto.untouched)">*Tutti i
-      campi sono obbligatori*</small><br>
+    <input class="centered" type="submit" value="Aggiungi il Pacchetto"><br>
+    <small class="error-msg" *ngIf="isNotValid">Ricontrolla i campi del form!</small><br>
   </form>
 </ng-template>
 
 <ng-template [ngIf]="showListaPacchettiOfferti">
   <div>
     <h1>Questa e' la lista delle Pacchetti</h1>
-    <fin-list-packets
-    [listPackets] = "PacketsList">
-    </fin-list-packets>
+    <fin-list-items
+    [listItems] = "PacketsList"
+    [listHeader] = "listPacketsHeaders"
+    [listKeys] ="listPacketKeys"
+    [listOptions] ="['Elimina', 'Modifica']"
+    (deleteEvent)="cancellaPacchetto($event)"
+    >
+    </fin-list-items>
   </div>
 </ng-template>
 
 <ng-template [ngIf]="showListaPrenotazioni">
   <div>
     <h1>Questa e' la lista delle Prenotazioni</h1>
-    <fin-list-packets>
-    </fin-list-packets>
+    <fin-list-items
+      [listItems] = "ReservationsList"
+      [listHeader] = "reservationsListHeaders"
+      [listKeys] ="reservationsKeys"
+      [listOptions] ="['Elimina']"
+      (deleteEvent)="cancellaPrenotazione($event)"
+      >
+    </fin-list-items>
   </div>
 </ng-template>

@@ -18,10 +18,13 @@
          type="number" name="numeroPersone" #refNumeroPersone="ngModel" 
          [ngModel]="nPeople">
 
-
-        <input type="submit" value="Prenota!">
+        <input type="submit" value="Prenota! 💸">
         <small *ngIf="invalidDates">Inserisci delle date valide! Pls</small>
+
+        <small *ngIf="invalidDates">Inserisci delle date valide! Pls</small>
+        
     </form>
+    <button (click)="goToHomeUser()">Torna indietro ⬅️</button>
 
 
 </div>

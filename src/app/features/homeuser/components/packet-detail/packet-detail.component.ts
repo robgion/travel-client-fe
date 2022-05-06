@@ -14,21 +14,31 @@ import { Reservation } from 'src/app/shared/model/reservation-model';
 })
 export class PacketDetailComponent implements OnInit {
 
+  //Data di partenza attualmente selezione
   startDate: string = ""
+
+  //data di arrivo attualmente selezionata
   endDate: string = ""
+
+  //Numero di persone partecipanti
   nPeople: number = 1
 
+  //Booleano che triggera il messaggio di errore per campi non corretti
   invalidDates: boolean = false
+
+  //Pacchetto attualmente selezionato
+  currentPacket: Packet = {} as Packet
+
+  //Utente attualmente loggato
+  currentUserId: number = 0;
 
   constructor(private route: ActivatedRoute,
     private packetService: PacketService,
     private reservationService: ReservationService,
     private router: Router) {
-
   }
-  currentPacket: Packet = {} as Packet
-  currentUserId: number = 0;
 
+  //Recupero tutti i pacchetti disponibili all'utente mentre avvio la pagina
   ngOnInit(): void {
     this.route.params.subscribe(
       p => {
@@ -48,6 +58,7 @@ export class PacketDetailComponent implements OnInit {
     )
   }
 
+  //Converto da YYYY-MM-DD a DD-MM-YYYY
   private formatDateString(oldDate: string) {
     let anno, giorno, mese: string = ""
     let oldDateArray = oldDate.split('-')
@@ -58,14 +69,12 @@ export class PacketDetailComponent implements OnInit {
 
   }
 
+  //Creo una nuova prenotazione
   createReservation(reservationForm: NgForm) {
     if (reservationForm.value.dataInizio === "" || reservationForm.value.dataFine === "") {
-      console.log("NO!")
       this.invalidDates = true
       return
     }
-
-
 
     const newReservation: Reservation = {
       id: 0,
@@ -85,6 +94,12 @@ export class PacketDetailComponent implements OnInit {
       }
     )
 
+  }
+
+
+  //Torna alla schermata utente
+  goToHomeUser() {
+    this.router.navigateByUrl("homeuser/" + this.currentUserId)
   }
 
 }

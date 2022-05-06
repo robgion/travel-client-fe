@@ -17,6 +17,11 @@ export class PacketService {
     return this.http.get<Packet>(url);
   }
 
+  public deletePacketById(packet_id: number): Observable<any> {
+    const url = environment.baseUrl + '/packets/' + packet_id;
+    return this.http.delete<any>(url);
+  }
+
   public getAllPackets(): Observable<Packet[]> {
     const url = environment.baseUrl + '/packets'
     return this.http.get<Packet[]>(url);
