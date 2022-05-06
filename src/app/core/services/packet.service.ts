@@ -21,4 +21,10 @@ export class PacketService {
     const url = environment.baseUrl + '/packets'
     return this.http.get<Packet[]>(url);
   }
+
+  public createPacket(packet: Packet): Observable<number> {
+    const url = environment.baseUrl + '/packets';
+    return this.http.post<number>(url, packet);
+  }
+
 }

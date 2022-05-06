@@ -27,4 +27,9 @@ export class ReservationService {
     const url = environment.baseUrl + '/reservations/'
     return this.http.post(url,reservation)
   }
+  
+  public getAllReservations(): Observable<Reservation[]> {
+    const url = environment.baseUrl + '/reservations'
+    return this.http.get<Reservation[]>(url);
+  }
 }

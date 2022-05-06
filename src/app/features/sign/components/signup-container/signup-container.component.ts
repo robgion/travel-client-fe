@@ -35,7 +35,7 @@ export class SignupContainerComponent implements OnInit {
           if (user.mail === this.insertedEmail) {
             this.alreadyExist = true
             return
-          }        
+          }
         }
         if (!this.alreadyExist) {
           const userToSave:User={
@@ -49,7 +49,7 @@ export class SignupContainerComponent implements OnInit {
               console.log(result)
               console.log("UTENTE REGISTRATO!")
             },
-            error =>  {
+            error => {
               console.log(error)
             }
           )
@@ -59,7 +59,7 @@ export class SignupContainerComponent implements OnInit {
       error => {
         console.log(error)
       }
-    )    
+    )
   }
 
   ngOnInit(): void {
