@@ -57,6 +57,7 @@
       "nr_people": 15
     },
     {
+      "id": 3,
       "id_user": 1,
       "id_packet": 2,
       "start_date": "10/05/2022",
@@ -64,6 +65,7 @@
       "nr_people": 2
     },
     {
+      "id":4,
       "id_user": 2,
       "id_packet": 1,
       "start_date": "19/06/2022",
@@ -71,6 +73,7 @@
       "nr_people": 4
     },
     {
+      "id": 5,
       "id_user": 1,
       "id_packet": 1,
       "start_date": "15/05/2022",
@@ -78,6 +81,7 @@
       "nr_people": 8
     },
     {
+      "id": 6,
       "id_user": 1,
       "id_packet": 2,
       "start_date": "23/07/2022",
