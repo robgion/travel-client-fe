@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "mail": "ciao@gmail.com",
       "password": "1234",
@@ -18,7 +19,8 @@
       "role": 1
     }
   ],
-  "packets": [{
+  "packets": [
+    {
       "id": 1,
       "nomePacchetto": "Vacanza per poveri",
       "city": "Vimercate",
@@ -38,9 +40,17 @@
       "city": "Grecia",
       "mezzoTrasporto": 2,
       "costo": 20
+    },
+    {
+      "id": 4,
+      "nomePacchetto": "Mare",
+      "mezzoTrasporto": "2",
+      "city": "Beri",
+      "costo": "0.5"
     }
   ],
-  "reservations": [{
+  "reservations": [
+    {
       "id": 1,
       "id_user": 1,
       "id_packet": 1,
@@ -65,7 +75,7 @@
       "nr_people": 2
     },
     {
-      "id":4,
+      "id": 4,
       "id_user": 2,
       "id_packet": 1,
       "start_date": "19/06/2022",

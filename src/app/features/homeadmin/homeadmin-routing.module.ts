@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HomeadminContainerComponent } from "./homeadmin-container/homeadmin-container.component";
+import { HomeadminContainerComponent } from "./components/homeadmin-container/homeadmin-container.component";
 
 
 const routes: Routes = [

@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'homeadmin', loadChildren: () => import('./features/homeadmin/homeadmin.module')
       .then(m => m.HomeadminModule)
   },
+  
 
 
 ]
