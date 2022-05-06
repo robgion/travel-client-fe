@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { enumNavbar } from '../../enum-navbar';
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,23 +9,25 @@ import { Router } from "@angular/router";
 })
 export class NavbarContainerComponent implements OnInit {
 
- 
+
+  @Input()
+  listTabs: string[] = []
+
+  @Output()
+  menuSelectionEvent: EventEmitter<number> = new EventEmitter<number>()
 
   constructor(private router: Router,) { }
 
   ngOnInit(): void {
   }
 
-  @Input()
-
-  listTabs: string[] = [];
+  navbarSelectionHandler(indice_menu: number) {
+    console.log(indice_menu)
+    this.menuSelectionEvent.emit(indice_menu)
+  }
 
   goToSignIn() {
     this.router.navigateByUrl("login/signin")
   }
-
-
-
- 
 }
 
