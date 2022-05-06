@@ -5,12 +5,16 @@ import { HomeadminContainerComponent } from './components/homeadmin-container/ho
 import { NavbarModule } from 'src/app/@template/navbar/navbar.module';
 import { HomeAdminRoutingModule } from './homeadmin-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ListPrenotazioniContainerComponent } from './components/list-prenotazioni-container/list-prenotazioni-container.component';
+import { ListPacketContainerComponent } from './components/list-packet-container/list-packet-container.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeadminContainerComponent
+    HomeadminContainerComponent,
+    ListPrenotazioniContainerComponent,
+    ListPacketContainerComponent
   ],
   imports: [
     CommonModule,

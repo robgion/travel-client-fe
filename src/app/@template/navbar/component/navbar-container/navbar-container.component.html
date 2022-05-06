@@ -1,7 +1,5 @@
 <div class="toolbar" role="banner">
-  <span class="fin-menu" (click)="manageMenu(0)">Lista prenotazioni</span>
-  <span class="fin-menu" (click)="manageMenu(1)">Crea pacchetto</span>
-  <span class="fin-menu" (click)="manageMenu(2)">Lista Pacchetti Offerti</span>
+  <span *ngFor="let Tab of listTabs">{{Tab}}</span>
   <div class="LogoutButton">
     <button class="LogoutButton" (click)="goToSignIn()">Logout</button>
   </div>
