@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { enumNavbar } from '../../enum-navbar';
 import { Router } from "@angular/router";
 
 @Component({
@@ -22,7 +21,6 @@ export class NavbarContainerComponent implements OnInit {
   }
 
   navbarSelectionHandler(indice_menu: number) {
-    console.log(indice_menu)
     this.menuSelectionEvent.emit(indice_menu)
   }
 

@@ -1,28 +1,6 @@
 <fin-navbar-container
     [listTabs]="['Pacchetti disponibili','Lista prenotazioni']"
-    (menuSelectionEvent)="switchUserView($event)"
+    (menuSelectionEvent)="navbarSelection($event)"
 ></fin-navbar-container>
 
-<div>
-    <h1>Questa è la pagina utente di id: {{currentUserId}}</h1>
-    <div *ngIf="showAvailablePackets">
-        <fin-list-items 
-            [listOptions]= "['Seleziona']"
-            [title]="'Pacchetti disponibili'"
-            [listItems] = "availablePacketsList"
-            [listHeader] = "availablePacketsListHeaders"
-            [listKeys] = " availablePacketsKeys"
-            (selectEvent)="selectHandler($event)"
-        ></fin-list-items>
-    </div>
-    <div *ngIf="showReservations">
-        <fin-list-items
-            [listOptions]= "['Elimina']"
-            [title]="'Prenotazioni effettuate'"
-            [listItems] = "reservationsList"
-            [listHeader] = "reservationsListHeaders"
-            [listKeys] = "reservationsKeys"
-            (deleteEvent)="deleteHandler($event)"
-        ></fin-list-items>
-    </div>
-</div>
+<router-outlet></router-outlet>

@@ -32,8 +32,9 @@ export class SigninContainerComponent implements OnInit {
         for (let index = 0; index < result.length; index++) {
           const user: User = result[index];
           if (user.mail === this.insertedEmail && user.password === this.insertedPassword) {
-            if (user.role == RoleEnum.GUEST) this.router.navigateByUrl('homeuser' + "/" + user.id)
-            if (user.role == RoleEnum.ADMIN) this.router.navigateByUrl('homeadmin')
+            if (user.role === RoleEnum.GUEST) this.router.navigateByUrl('homeuser' + "/" + user.id)
+            if (user.role === RoleEnum.ADMIN) this.router.navigateByUrl('homeadmin')
+            return
           } else {
             this.incorrectForm = true
           }

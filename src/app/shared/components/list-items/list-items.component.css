@@ -2,12 +2,12 @@
     border: 1px black solid;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
     width: 70%;
 }
 
 td, th, tr {
-    width: auto;
+    text-align: center;
+    padding: 1%;
     border: 1px solid black;
 }
 

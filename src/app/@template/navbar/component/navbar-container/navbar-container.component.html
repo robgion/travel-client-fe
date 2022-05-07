@@ -2,9 +2,9 @@
   <span *ngFor="let tab of listTabs; index as i"
     (click)="navbarSelectionHandler(i)"
   >
-    {{tab}}
+  {{tab}}
   </span>
-  <div class="logout-button">
-    <button class="LogoutButton" (click)="goToSignIn()">Logout</button>
+  <div class="logout-button" (click)="goToSignIn()">
+    Logout
   </div>
 </div>
