@@ -34,11 +34,6 @@ button:hover {
   color: white;
 }
 
-button:focus {
-  color: white;
-  background-color: #00008b;
-}
-
 .logout-button {
   border-radius: 20px;
   text-align: center;
