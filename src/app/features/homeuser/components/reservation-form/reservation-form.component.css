@@ -9,7 +9,20 @@ label {
     margin-bottom: 1%;
 }
 
-input:last-child{
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
+.error-msg {
+    margin-top: 2vh;
+    color: red;
+}
+
+.card {
+    margin-top: 10vh;
+}
+
+.reservationButton {
+    font-size: large;
+    margin-top: 2%;
+}
+
+.date {
+    font-size: x-large;
 }

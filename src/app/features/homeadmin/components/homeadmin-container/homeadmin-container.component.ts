@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -10,20 +10,24 @@ import { Router } from '@angular/router';
 })
 
 
-export class HomeadminContainerComponent implements OnInit {
+export class HomeAdminContainerComponent implements OnInit {
+
+  navbarOptions: string[] = ['packets', 'reservations']
 
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((p) => {
+      //Questo id è il nome di variable assegnato nei path in product-routing
+      this.router.navigateByUrl('/homeadmin/packets')
+    });
+
   }
 
-  switchAdminView(indice_menu: number) {
-    if(indice_menu === 0) this.router.navigateByUrl("homeadmin/lista-prenotazioni")
-    else this.router.navigateByUrl("homeadmin/lista-pacchetti")
+  navbarSelection(column_id: number) {
+    this.router.navigateByUrl('/homeadmin/'+this.navbarOptions[column_id])
   }
-
-
-
 }

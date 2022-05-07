@@ -32,7 +32,6 @@ export class ReservationFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private packetService: PacketService,
     private reservationService: ReservationService,
     private router: Router
   ) {}
@@ -84,7 +83,7 @@ export class ReservationFormComponent implements OnInit {
           'homeuser/' + this.currentUserId + '/reservations'
         );
       },
-      (error) => {
+      error => {
         console.log(error);
       }
     );

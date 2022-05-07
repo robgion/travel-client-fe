@@ -3,14 +3,31 @@
 }
 
 .card {
+    font-size: large;
     text-align: center;
+    margin-top: 20vh;
 }
 
 .centered {
+    font-size: large;
     text-align: center;
     margin-top: 1%;
 }
 
-.signupButton {
-    margin-top: 1%;
+input {
+    text-align: center;
+    width: 12vw;
+    margin-top: 1vh;
+}
+
+.login-button {
+    margin-top: 2%;
+    width: 6vw;
+    font-size: large;
+}
+
+button {
+    font-size: large;
+    margin-top: 2%;
+    padding:1%;
 }

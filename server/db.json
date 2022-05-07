@@ -17,115 +17,60 @@
       "mail": "francesco.milano@finconsgroup.com",
       "password": "123",
       "role": 1
+    },
+    {
+      "id": 4,
+      "mail": "123456",
+      "password": "123456",
+      "role": 1
     }
   ],
   "packets": [
     {
-      "id": 1,
-      "nomePacchetto": "Vacanza per poveri",
-      "city": "Vimercate",
-      "mezzoTrasporto": 3,
-      "costo": 0.5
-    },
-    {
       "id": 2,
       "nomePacchetto": "Vacanza per ricchi",
       "city": "Stazione spaziale",
-      "mezzoTrasporto": 4,
+      "mezzoTrasporto": "Macchina",
       "costo": 50
     },
     {
-      "id": 3,
-      "nomePacchetto": "Vacanza per media borghesia",
-      "city": "Grecia",
-      "mezzoTrasporto": 2,
-      "costo": 20
+      "id": 4,
+      "nomePacchetto": "Pippo!",
+      "mezzoTrasporto": "Treno",
+      "city": "123",
+      "costo": 12
     },
     {
-      "id": 4,
-      "nomePacchetto": "Ciaone",
-      "mezzoTrasporto": 1,
-      "city": "BLALALLALA",
-      "costo": 100
+      "id": 6,
+      "nomePacchetto": "Ciao!",
+      "mezzoTrasporto": "Nave",
+      "city": "Cosenza",
+      "costo": 1002
     }
   ],
   "reservations": [
     {
-      "id": 5,
-      "id_user": 1,
-      "id_packet": 1,
-      "start_date": "15/05/2022",
-      "end_date": "27/05/2022",
-      "nr_people": 8
-    },
-    {
-      "id": 6,
+      "id": 3,
       "id_user": 1,
       "id_packet": 2,
-      "start_date": "23/07/2022",
-      "end_date": "08/08/2022",
-      "nr_people": 3
+      "start_date": "10/05/2022",
+      "end_date": "17/05/2022",
+      "nr_people": 2
     },
     {
-      "id": 7,
+      "id": 10,
       "id_user": "1",
-      "id_packet": 3,
-      "start_date": "13-05-2022",
-      "end_date": "22-05-2022",
-      "nr_people": 9999999
-    },
-    {
-      "id": 8,
-      "id_packet": 1,
-      "start_date": "02-06-2022",
-      "end_date": "03-05-2022",
-      "nr_people": 1
-    },
-    {
-      "id": 9,
-      "id_packet": 1,
-      "start_date": "18-05-2022",
-      "end_date": "21-05-2022",
-      "nr_people": 1
+      "id_packet": "5",
+      "start_date": "04-05-2022",
+      "end_date": "28-05-2022",
+      "nr_people": 5
     },
     {
       "id": 11,
       "id_user": "1",
-      "id_packet": "1",
-      "start_date": "13-05-2022",
-      "end_date": "26-05-2022",
-      "nr_people": 3
-    },
-    {
-      "id": 12,
-      "id_user": "1",
-      "id_packet": "1",
-      "start_date": "27-05-2022",
-      "end_date": "11-05-2022",
-      "nr_people": 4
-    },
-    {
-      "id": 13,
-      "id_user": "1",
-      "id_packet": "1",
-      "start_date": "14-05-2022",
-      "end_date": "22-05-2022",
-      "nr_people": 10
-    },
-    {
-      "id": 14,
-      "id_user": "1",
-      "id_packet": "1",
-      "start_date": "25-05-2022",
-      "end_date": "28-05-2022",
-      "nr_people": 4
-    },
-    {
-      "id": 15,
-      "id_user": "0",
-      "id_packet": "1",
-      "start_date": "26-05-2022",
-      "end_date": "05-06-2022",
+      "id_packet": "2",
+      "start_date": "12-05-2022",
+      "end_date": "21-05-2022",
       "nr_people": 5
     }
   ]

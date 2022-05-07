@@ -24,6 +24,9 @@ export class SignupContainerComponent implements OnInit {
   ) {
   }
 
+  ngOnInit(): void {
+  }
+
   completeSignupForm(signupForm: NgForm) {
     this.insertedEmail = signupForm.value.campoEmail
     this.userService.getAllUser().subscribe(
@@ -62,7 +65,9 @@ export class SignupContainerComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
+  goToLogin() {
+    this.router.navigateByUrl("login/signin")
   }
+
 
 }

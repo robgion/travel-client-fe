@@ -23,9 +23,9 @@ export class ReservationService {
     return this.http.delete<any>(url);
   }
 
-  public createReservation(reservation:Reservation):Observable<any>{
+  public createReservation(reservation:Reservation):Observable<Reservation>{
     const url = environment.baseUrl + '/reservations/'
-    return this.http.post(url,reservation)
+    return this.http.post<Reservation>(url,reservation)
   }
   
   public getAllReservations(): Observable<Reservation[]> {

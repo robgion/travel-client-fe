@@ -1,5 +1,6 @@
 <fin-navbar-container
-  [listTabs]="['Lista Pacchetti', 'Lista Prenotazioni']"
-  (menuSelectionEvent)="switchAdminView($event)"
+  [listTabs]="['Gestione Pacchetti', 'Gestione Prenotazioni']"
+  (menuSelectionEvent)="navbarSelection($event)"
 ></fin-navbar-container>
 
+<router-outlet></router-outlet>

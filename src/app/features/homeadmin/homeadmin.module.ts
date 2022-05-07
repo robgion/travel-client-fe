@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
-import { HomeadminContainerComponent } from './components/homeadmin-container/homeadmin-container.component';
+import { HomeAdminContainerComponent } from './components/homeadmin-container/homeadmin-container.component';
 import { NavbarModule } from 'src/app/@template/navbar/navbar.module';
 import { HomeAdminRoutingModule } from './homeadmin-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    HomeadminContainerComponent,
+    HomeAdminContainerComponent,
     ListPrenotazioniContainerComponent,
     ListPacketContainerComponent
   ],
@@ -23,7 +23,8 @@ import { RouterModule } from '@angular/router';
     HomeAdminRoutingModule,
     FormsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    NavbarModule
   ]
 })
 export class HomeadminModule { }
